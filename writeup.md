@@ -2,11 +2,13 @@
 
 #### Objective
 On the first project of the Self-Driving Car Nanodegree we developed a rudimentary algorithm to detect lane lines on roads. This algorithm was only able to detect straight lines under constant lighting and road conditions. In addition, the algorithm was not able to extract valuable road information such as road curvature which we would need to steer the vehicle correctlty. A more robust algorithm is necessary to tackle these challenges. The objective of this project was to develop a  more robust algorithm to tackle the unresolved challenges from project one: 
+
 1. Detecting lanes on roads that can accurately identify road curvature 
 2. Detect lanes under varying lighting conditions (shadows, rapid changes of brightness, and pavement color)
 
 ### Algorithm Overview
 The following are the steps to find road lane lines that overcome the previously discussed challenges:
+
 1. Compute the camera calibration matrix and distortion coefficients given a set of chessboard images.
 2. Apply a distortion correction to raw images.
 3. Use color transforms, gradients, etc., to create a thresholded binary image.
@@ -19,11 +21,11 @@ The following are the steps to find road lane lines that overcome the previously
 [//]: # (Image References)
 
 [image1]: ./readme_images/calib.png "Undistorted"
-[image2]: ./test_images/undist.jpg "Road Transformed"
-[image3]: ./readme_images/final_thresh.jpg "Binary Example"
-[image4]: ./readme_images/warp.jpg "Warp Example"
-[image5]: ./readme_images/hist.jpg "Fit Visual"
-[image6]: ./readme_images/slide.jpg "Output"
+[image2]: ./test_images/undist.png "Road Transformed"
+[image3]: ./readme_images/final_thresh.png "Binary Example"
+[image4]: ./readme_images/warp.png "Warp Example"
+[image5]: ./readme_images/hist.png "Fit Visual"
+[image6]: ./readme_images/slide.png "Output"
 [video1]: ./project_video.mp4 "Video"
 
 ### Camera Calibration
