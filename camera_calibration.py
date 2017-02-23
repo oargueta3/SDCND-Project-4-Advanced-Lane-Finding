@@ -48,7 +48,7 @@ if __name__ == "__main__":
 	# Calibrate Camera
 	image_size = gray.shape[::-1]
 	ret, mtx, dist, rvecs, tvecs = cv2.calibrateCamera(obj_points, img_points, 
-														image_size, None, None)
+							       image_size, None, None)
 	
 	# Save distortion coefficients and Camera Matrix in a pickle file
 	save_path = "" 
