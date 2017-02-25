@@ -21,7 +21,7 @@ The following are the steps to detect road lane lines robustly:
 [//]: # (Image References)
 
 [image1]: ./readme_images/calib.png "Undistorted"
-[image2]: ./test_images/undist.png "Road Transformed"
+[image2]: ./readme_images/undist.png "Road Transformed"
 [image3]: ./readme_images/final_thresh.png "Binary Example"
 [image4]: ./readme_images/warp.png "Warp Example"
 [image5]: ./readme_images/hist.png "Fit Visual"
@@ -29,6 +29,7 @@ The following are the steps to detect road lane lines robustly:
 [image7]: ./readme_images/formula.png "Curvature Equation"
 [image8]: ./readme_images/lane_binary.png "Projected Lane"
 [image9]: ./readme_images/lane_projection_final.png "Projected Lane"
+[image10]: ./readme_images/lane_projection_final.png "Pipeline Diagram"
 [video1]: ./project_video.mp4 "Video"
 
 ## Camera Calibration
@@ -206,7 +207,9 @@ This code can also be found in  **code cells 27 and 28 in the `Advanced Lane Det
 
 ### Final Output (video)
 --- 
-The function **`process_frame`** returns the original image with the detected lane drawn on the road along with the curvature and lane center offset measurements. The function keeps track of three global variables to apply a first order filter on the left and right fit polynomial coefficients and the radius of curvature to eliminate noise and smoother performance.
+The function **`process_frame()`** returns the original image with the detected lane drawn on the road along with the curvature and lane center offset measurements. The function keeps track of three global variables to apply a first order filter on the left and right fit polynomial coefficients and the radius of curvature to eliminate noise and smoother performance. A flow diagram describing the function **`process_frame()`** is seen below.
+
+![alt text][image10]
 
 #### Project Video
 <a href="https://www.youtube.com/embed/j9AjvjqNx4Q target="_blank"><img src="http://img.youtube.com/vi/j9AjvjqNx4Q/0.jpg" 
