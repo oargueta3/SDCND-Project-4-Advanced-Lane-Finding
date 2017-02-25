@@ -11,11 +11,12 @@ On the first project of the Self-Driving Car Nanodegree we developed a rudimenta
 
 This project was written in Python. The follwing files were used to create an test the model.
 
-1. `Advanced Lane Finding - Oscar Argueta.ipynb`: Used to develop and tune the model. Detailed explanations and figures can be found in this jupyter notebook 
-2. `camera_calibration.py`: File that loads the neural net model and communicates with the simulator to excecute predicted steering angles
-3. `dist_pickle.py`: File that was used to make and train a KERAS model for a modified version of the LeNet Architecture. Saves model weights 
-4. `result.mp4`: File that contains the trained weights
-5. `writeup.md`: File contains a JSON representation of the neural net that can be used to predict steering angles in realtime
+1. `Advanced Lane Finding - Oscar Argueta.ipynb`: Used to develop the lane detection algorithm. Detailed explanations and figures can be found in this jupyter notebook 
+2. `camera_calibration.py`: Python script that calibrates camera using the images in the `camera_cal` directory. Generates the pickle file `dist_pickle.p` containing the camera matrix and distortion coefficients
+3. `writeup.md`: Detailed report that includes detailed description of the code used in each step and You should image examples to demonstrate how the code works
+4. `project_video.mp4`: Video stream to run the lane detection algorithm on
+5. `result.mp4`: Output video with detected lane projected onto the road in the video stream
+
 
 ### Algorithm
 The following are the steps to detect road lane lines robustly:
@@ -33,3 +34,15 @@ The diagram below summarizes the pipeline to process images.
 
 <img src="readme_images/flow_chart.png">
 
+## Results
+
+<a href="https://www.youtube.com/embed/j9AjvjqNx4Q target="_blank"><img src="http://img.youtube.com/vi/j9AjvjqNx4Q/0.jpg" 
+alt="IMAGE ALT TEXT HERE" width="480" height="360" border="10" /></a>
+
+
+## How to run
+
+1. Install [anaconda](https://www.continuum.io/downloads)
+2. Install and activate the [carnd-term1](https://github.com/udacity/CarND-Term1-Starter-Kit) conda environment
+3. Run `$ python camera_calibration.py` to obtain distortion correction parameters in a pickle file called `dist_pickle.p`
+4. run ` $ jupyter notebook` on the directory containing the IPython notebook and open `Advanced Lane Detection - Oscar Argueta.ipynb`
