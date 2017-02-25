@@ -45,4 +45,4 @@ alt="IMAGE ALT TEXT HERE" width="480" height="360" border="10" /></a>
 1. Install [anaconda](https://www.continuum.io/downloads)
 2. Install and activate the [carnd-term1](https://github.com/udacity/CarND-Term1-Starter-Kit) conda environment
 3. Run `$ python camera_calibration.py` to obtain distortion correction parameters in a pickle file called `dist_pickle.p`
-4. run ` $ jupyter notebook` on the directory containing the IPython notebook and open `Advanced Lane Detection - Oscar Argueta.ipynb`
+4. Run ` $ jupyter notebook` on the directory containing the IPython notebook and open `Advanced Lane Detection - Oscar Argueta.ipynb`
