@@ -29,7 +29,7 @@ The following are the steps to detect road lane lines robustly:
 [image7]: ./readme_images/formula.png "Curvature Equation"
 [image8]: ./readme_images/lane_binary.png "Projected Lane"
 [image9]: ./readme_images/lane_projection_final.png "Projected Lane"
-[image10]: ./readme_images/lane_projection_final.png "Pipeline Diagram"
+[image10]: ./readme_images/flow_chart.png "Pipeline Diagram"
 [video1]: ./project_video.mp4 "Video"
 
 ## Camera Calibration
@@ -217,6 +217,6 @@ alt="IMAGE ALT TEXT HERE" width="480" height="360" border="10" /></a>
 
 ### Discussion
 ---
-**Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?**
+Overall, the development of the pipeline was fairly straightfoward. A few things took several rounds of trial and error, like selecting the destination and source points for the perspective transform and verifying the computed radius of curvature was correct. Key to the successful performance of the algorithm was tuning the gradient and color thresholds. Selecting the appropriate thresholds to extract lane lines under varying conditions to generate a binary image was challenging. The selected thresholds extract lane lines under varying conditions but it is not nearly as robust to perform flawlessly under more extreme lighting conditions.
 
-Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
+Based on this current implementation, the pipeline would fail under different modes. First it will most likely fail under rapidly changing lighting conditions like the ones found in the `harder_challenge_video.mp4`. The amount of shadows break the thresholding algorithm as there's a lot of left over pixel noise after thre thresholding is applied. Because of this noise the sliding window method is compromised. A few ways to improve performance would be preprocessing the image by applying an histogram equalization to improve image contrast and used more advanced lane extraction techinques that use shape and color for feature extraction. In addtion, this algorithm doesn't take into account the road's slope and wouldn' not how to react giving ambigous lane line markings (a common occurance in real world conditions). Lastly, a way to speed up the algorithm is to not do a lane search from scratch. It is possible to use the previous frame to make an assumption about where the lane lines will be next. This will significantly increase the speed of the algorithm but also increase it's complexity as we now have to establish a framework to weed out faulty lane detection.
